@@ -1,6 +1,6 @@
-const Form = ({ changeHandler, submitHandler, formData }) => {
+const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
   return (
-    <form onSubmit={submitHandler}>
+    <form className="bg-light w-100 " onSubmit={submitHandler}>
       <label>
         Name:
         <input
@@ -11,6 +11,7 @@ const Form = ({ changeHandler, submitHandler, formData }) => {
           onChange={changeHandler}
         />
       </label>
+      <div className="text-danger">{errors.name}</div>
       <label>
         email:
         <input
@@ -21,6 +22,8 @@ const Form = ({ changeHandler, submitHandler, formData }) => {
           onChange={changeHandler}
         />
       </label>
+      <div className="text-danger">{errors.email}</div>
+
       <label>
         rol:
         <input
@@ -31,7 +34,22 @@ const Form = ({ changeHandler, submitHandler, formData }) => {
           onChange={changeHandler}
         />
       </label>
-      <button type="submit">Submit</button>
+      <div className="text-danger">{errors.rol}</div>
+
+      <label>
+        <input
+          type="checkbox"
+          name="terms"
+          checked={formData.terms}
+          onChange={changeHandler}
+        />
+        Şartları Kabul Ediyorum
+      </label>
+      <div className="text-danger">{errors.terms}</div>
+
+      <button type="submit" disabled={!isValid}>
+        Submit
+      </button>
     </form>
   );
 };
