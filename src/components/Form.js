@@ -1,9 +1,13 @@
 const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
   return (
-    <form className="bg-light w-100 " onSubmit={submitHandler}>
-      <label>
+    <form
+      className="bg-light text-info p-5 d-flex flex-column "
+      onSubmit={submitHandler}
+    >
+      <label className="w-50 ">
         Name:
         <input
+          className="ms-3"
           type="text"
           name="name"
           placeholder="name"
@@ -15,6 +19,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
       <label>
         email:
         <input
+          className="ms-3"
           type="email"
           name="email"
           placeholder="email"
@@ -27,6 +32,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
       <label>
         rol:
         <input
+          className="ms-3"
           type="text"
           name="rol"
           placeholder="role"
@@ -35,7 +41,6 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
         />
       </label>
       <div className="text-danger">{errors.rol}</div>
-
       <label>
         <input
           type="checkbox"

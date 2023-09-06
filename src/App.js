@@ -9,7 +9,7 @@ function App() {
   const membersInitial = [
     {
       id: 1,
-      img: "https://picsum.photos/",
+      img: "https://picsum.photos/200/300",
       name: "Gülbeyaz Özer",
       email: "glbzbayram@gmail.com",
       rol: "Front-end developer",
@@ -17,7 +17,7 @@ function App() {
     },
     {
       id: 2,
-      img: "https://picsum.photos/",
+      img: "https://picsum.photos/200/300",
       name: "Mehmet Özer",
       email: "mehmetozer@gmail.com",
       rol: "Back-end developer",
@@ -25,7 +25,7 @@ function App() {
     },
     {
       id: 3,
-      img: "https://picsum.photos/",
+      img: "https://picsum.photos/200/300",
       name: "Maya Özer",
       email: "mayaozer@gmail.com",
       rol: "Full-stack developer",
@@ -66,7 +66,7 @@ function App() {
     } else {
       const newMember = {
         ...formData,
-        ["img"]: "https://picsum.photos/",
+        ["img"]: "https://picsum.photos/200/300",
         ["id"]: members[members.length - 1].id + 1,
       };
       setMembers([...members, newMember]);
@@ -105,9 +105,9 @@ function App() {
   }, [formData]);
 
   return (
-    <div className="d-flex ">
+    <div>
       <header className="bg-secondary p-2 text-center ">
-        <nav className="d-flex flex-column fs-5 gap-5 p-3">
+        <nav className="d-flex justify-content-center fs-5 gap-5 p-3">
           <NavLink className="text-decoration-none text-warning" to="/" exact>
             Home
           </NavLink>
