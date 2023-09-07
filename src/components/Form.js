@@ -17,7 +17,9 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
           onChange={changeHandler}
         />
       </label>
-      <div className="text-danger">{errors.name}</div>
+      <div data-cy="name-error" className="text-danger">
+        {errors.name}
+      </div>
       <label>
         email:
         <input
@@ -57,7 +59,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
       </label>
       <div className="text-danger">{errors.terms}</div>
 
-      <button type="submit" disabled={!isValid}>
+      <button data-cy="submit" type="submit" disabled={!isValid}>
         Submit
       </button>
     </form>
