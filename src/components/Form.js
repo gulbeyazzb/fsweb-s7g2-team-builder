@@ -3,6 +3,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
     <form
       className="bg-light text-info p-5 d-flex flex-column "
       onSubmit={submitHandler}
+      data-cy="member-form"
     >
       <label className="w-50 ">
         Name:
@@ -10,6 +11,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
           className="ms-3"
           type="text"
           name="name"
+          data-cy="name"
           placeholder="name"
           value={formData.name}
           onChange={changeHandler}
@@ -21,6 +23,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
         <input
           className="ms-3"
           type="email"
+          data-cy="email"
           name="email"
           placeholder="email"
           value={formData.email}
@@ -34,6 +37,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
         <input
           className="ms-3"
           type="text"
+          data-cy="rol"
           name="rol"
           placeholder="role"
           value={formData.rol}
@@ -44,6 +48,7 @@ const Form = ({ changeHandler, submitHandler, formData, isValid, errors }) => {
       <label>
         <input
           type="checkbox"
+          data-cy="terms"
           name="terms"
           checked={formData.terms}
           onChange={changeHandler}
